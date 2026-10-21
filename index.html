@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CN Study Notebook · 23CSE302</title>
+<meta name="description" content="Exam-ready, source-grounded study notebook for 23CSE302 Computer Networks (Units 1–3).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Apply saved theme / sidebar state before paint to avoid a flash.
+  try {
+    var t = localStorage.getItem('cn-theme'); if (t) document.documentElement.dataset.theme = t;
+    if (localStorage.getItem('cn-toc-collapsed') === 'true') document.documentElement.classList.add('toc-collapsed');
+    document.documentElement.classList.add(localStorage.getItem('cn-mode') === '"notebook"' ? 'mode-notebook' : 'mode-article');
+  } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#notebook">Skip to notebook</a>
+
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="Table of contents and tools">
+    <div class="side-head">
+      <div class="brand">
+        <span class="brand-code">23CSE302</span>
+        <span class="brand-title">Computer Networks · Study Notebook</span>
+      </div>
+      <div class="side-tools">
+        <button class="icon-btn" id="modeToggle" aria-label="Switch to notebook view" title="Switch between article view and notebook view">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark theme" title="Light / dark theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn" id="printBtn" aria-label="Print or export to PDF" aria-expanded="false" aria-controls="printMenu" title="Print / save as PDF">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="menu" id="printMenu" hidden>
+      <button data-print="spread">Print this topic</button>
+      <button data-print="unit">Print this whole unit</button>
+      <button data-print="all">Print entire notebook</button>
+      <p class="menu-note">Choose “Save as PDF” in the print dialog to export.</p>
+    </div>
+    <div class="progress" id="progress" title="Topics you have marked as reviewed (stored only in this browser)">
+      <span class="progress-bar"><span id="progressFill"></span></span>
+      <span id="progressText">0 / 0</span>
+    </div>
+    <div class="search">
+      <label class="sr-only" for="searchInput">Search the notebook</label>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="searchInput" type="search" placeholder="Search everything  ( / )" autocomplete="off" aria-controls="searchResults">
+    </div>
+    <div class="search-results" id="searchResults" role="listbox" aria-label="Search results" hidden></div>
+    <div id="tocWrap">
+      <div class="toc-filter">
+        <label class="sr-only" for="tocFilter">Filter topics</label>
+        <input id="tocFilter" type="search" placeholder="Filter topic names…" autocomplete="off">
+      </div>
+      <div id="tocTree"></div>
+      <p class="toc-note">“Reviewed” marks are saved only in this browser (localStorage).</p>
+    </div>
+  </nav>
+
+  <main class="desk" id="notebook" tabindex="-1">
+    <div class="spread-wrap" id="spreadWrap"></div>
+    <nav class="pager" aria-label="Page navigation">
+      <button class="icon-btn" id="navToggle" aria-label="Hide table of contents" aria-expanded="true" aria-controls="toc" title="Show / hide contents">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button class="pager-btn" id="prevBtn"><span aria-hidden="true">←</span> <span id="prevLabel">Previous</span></button>
+      <span class="pager-info" id="pagerInfo" aria-live="polite"></span>
+      <label class="reviewed"><input type="checkbox" id="reviewedChk"> Reviewed</label>
+      <button class="pager-btn" id="nextBtn"><span id="nextLabel">Next</span> <span aria-hidden="true">→</span></button>
+    </nav>
+  </main>
+</div>
+
+<div id="printRoot" class="print-root" aria-hidden="true"></div>
+
+<script src="vendor/mermaid.min.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/content-intro.js"></script>
+<script src="js/content-u1.js"></script>
+<script src="js/content-u2.js"></script>
+<script src="js/content-u3.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
